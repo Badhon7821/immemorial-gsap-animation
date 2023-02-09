@@ -2,6 +2,12 @@ import React, { useRef } from "react";
 import { useGsapLeftShutter, useGsapRightShutter } from "../hooks/Gsap";
 
 const Featured = () => {
+  const featuredRef = useRef(null);
+  const featuredLeftShutter = useRef(null);
+  const featuredRightShutter = useRef(null);
+
+  useGsapLeftShutter(featuredLeftShutter, featuredRef);
+  useGsapRightShutter(featuredRightShutter, featuredRef);
   return (
     <section className="featured wrapper" ref={featuredRef}>
       <h2 className="section-title">Featured</h2>
